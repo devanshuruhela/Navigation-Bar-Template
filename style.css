@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --primaryColor: #fff;
+  --navColor1: #e63946;
+  --navColor2: #f1faee;
+  --navColor3: #a8dadc;
+  --navColor4: #457b9d;
+  --navColor5: #1d3557;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins',
+  sans-serif;
+  margin: 0;
+  background: #000;
+
+}
+
+/* --- Navigation Menu ------------------------------ */
+/* Overlay */
+.overlay
+{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+.overlay-enable
+{
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+.overlay-disable {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+/* MAV MENU */
+nav{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+nav ul{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: stretch;
+}
+
+nav ul li{
+  height:20%;
+  overflow: hidden;
+}
+
+nav li a{
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  top: 42%;
+  color:#000;
+  display: block;
+}
+nav li a:hover
+{
+  transform: scale(1.2);
+}
+
+nav li:nth-of-type(1)
+{
+  background-color: var(--navColor1);
+}
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color:#000;
+  font-size: 25px;
+}
+
+section#home {
+  background-image: url("https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+  background-position: center center;
+}
+
+
+section#about {
+  background-color: var(--navColor2);
+}
+
+section#skills {
+  background-color: var(--navColor3);
+}
+
+section#projects {
+  background-color: var(--navColor4);
+}
+
+section#contact {
+  background-color: var(--navColor5);
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
